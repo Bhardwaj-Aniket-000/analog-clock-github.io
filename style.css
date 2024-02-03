@@ -1,0 +1,209 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: #2c2929;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #000,#fff);
+    background-color: #060606;
+}
+.container{
+    height: 350px;
+    width: 350px;
+     border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: linear-gradient(to right, #000,#fff); */
+    /* box-shadow:inset  5px 5px 10px 5px #00000048; */
+}
+.clock{
+    height: 200px;
+    width: 200px;
+    background: white;
+    color: #000;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #090a0af2,#fffffdf6);
+    /* box-shadow:inset 5px 5px 20px 10px #1d1c1cee; */
+}
+.clock::after{
+    content: "";
+    height: 4px;
+    width: 4px;
+    border: 2px solid black;
+    position: relative;
+    background-color: #fcfafc;
+    border-radius: 50%;
+    z-index: 2;
+}
+.clock span{
+    position: absolute;
+    transform: rotate(calc(30deg * var(--rotate)));
+    inset: 10px;
+    text-align: center;
+}
+.clock span b{
+    display: inline-block;
+    font-size: 13px;
+    color: rgb(15, 15, 16);
+    /* transform: rotate(calc(-30deg *var(--rotate))); */
+}
+.am-pm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 43%;
+    left: 99%;
+    height: 40px;
+    width: 100px;
+    border: 1px solid #0a090955;
+    border-left: none;
+    color: #024850fd;
+    font-size: 27px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    text-shadow: 1px 1px 1px rgb(15, 246, 242);
+}
+.indicator{
+    position: absolute;
+   display: flex; 
+    justify-content: center; 
+    align-items: center;
+   border-radius: 50%;
+   transform-origin: bottom;
+   bottom: 50%;
+}
+
+.hour{
+    background-color: rgb(0, 225, 255);
+    /* transform: rotate(130deg); */
+    height: 50px;
+    width: 3px;
+}
+.minute{
+    background-color: rgb(233, 7, 245);
+    /* transform: rotate(270deg); */
+    height: 60px;
+    width: 2px;
+}
+.second{
+    background-color: rgb(6, 113, 22);
+    /* background-color: #000; */
+    height: 70px;
+    width: 1px;
+}
+
+.clock span:nth-child(3) b{
+    transform: rotate(-90deg);
+    color: rgb(10, 6, 252);
+    font-size: 20px;
+}
+.clock span:nth-child(6) b{
+    transform: rotate(-180deg);
+    color: rgb(10, 6, 252);
+    font-size: 20px;
+}
+.clock span:nth-child(9) b{
+    transform: rotate(90deg);
+    color: rgb(10, 6, 252);
+    font-size: 20px;
+
+}
+.clock span:nth-child(12) b{
+    color: rgb(10, 6, 252);
+    font-size: 20px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px){
+    
+body{
+    background: linear-gradient(to bottom, #f7f8f6,#0d0c0c);
+    background-color: #060606;
+}
+.clock{
+    height: 150px;
+    width: 150px;
+}
+.hour{
+    background-color: #fb0404;
+    height: 35px;
+    width: 2px;
+}
+.minute{
+    background-color: rgb(245, 186, 7);
+    /* transform: rotate(270deg); */
+    height: 42px;
+    width: 2px;
+}
+.second{
+    background-color: rgb(8, 8, 8);
+    /* background-color: #000; */
+    height:47px;
+    width: 1px;
+}
+
+.clock::after{
+    content: "";
+    height: 2px;
+    width: 2px;
+    border: 2px solid rgb(45, 45, 45);
+    position: relative;
+    background-color: #fcfafc;
+    border-radius: 50%;
+    z-index: 2;
+}
+.clock span b{
+    font-size: 12px;
+    font-weight: 900;
+}
+.clock span:nth-child(3) b{
+    color: rgb(219, 6, 252);
+    font-size: 16px;
+    font-weight: 600;
+}
+.clock span:nth-child(6) b{
+    color: rgb(219, 6, 252);
+    font-size: 16px;
+    font-weight: 600;
+}
+.clock span:nth-child(9) b{
+    color: rgb(219, 6, 252);
+    font-size: 16px;
+    font-weight: 600;
+}
+.clock span:nth-child(12) b{
+    color: rgb(219, 6, 252);
+    font-size: 16px;
+    font-weight: 600;
+}
+.am-pm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 38%;
+    left: 99%;
+    height: 30px;
+    width: 60px;
+    border: 1px solid #0a090955;
+    border-left: none;
+    color: #024850fd;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    text-shadow: 1px 1px 1px rgb(15, 235, 246);
+}
+}
