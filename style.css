@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
 }
 body{
     height: 100vh;
@@ -12,20 +11,22 @@ body{
     justify-content: center;
     align-items: center;
     background: linear-gradient(to right, #000,#fff);
+    background-color: #060606;
 }
 .container{
     height: 350px;
     width: 350px;
-    border-radius: 50%;
+     border-radius: 50%;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, #000,#fff);
+    /* background: linear-gradient(to right, #000,#fff); */
     /* box-shadow:inset  5px 5px 10px 5px #00000048; */
 }
 .clock{
-    height: 300px;
-    width: 300px;
+    height: 200px;
+    width: 200px;
     background: white;
     color: #000;
     border-radius: 50%;
@@ -33,28 +34,30 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, #000,#fff);
+    background: linear-gradient(to right, #090a0af2,#fffffdf6);
     /* box-shadow:inset 5px 5px 20px 10px #1d1c1cee; */
 }
 .clock::after{
     content: "";
-    height: 7px;
-    width: 7px;
+    height: 4px;
+    width: 4px;
+    border: 2px solid black;
     position: relative;
-    background-color: #1808f9;
+    background-color: #fcfafc;
     border-radius: 50%;
     z-index: 2;
 }
 .clock span{
     position: absolute;
-    /* transform: rotate(calc(30deg * var(--rotate))); */
-    inset: 20px;
+    transform: rotate(calc(30deg * var(--rotate)));
+    inset: 10px;
     text-align: center;
 }
 .clock span b{
     display: inline-block;
-    font-size: 20px;
-    color: rgb(0, 0, 255);
+    font-size: 13px;
+    color: rgb(15, 15, 16);
+    /* transform: rotate(calc(-30deg *var(--rotate))); */
 }
 .am-pm{
     display: flex;
@@ -62,15 +65,16 @@ body{
     align-items: center;
     position: absolute;
     top: 43%;
-    left: 100%;
+    left: 99%;
     height: 40px;
     width: 100px;
-    box-shadow: inset 1px 1px 10px 1px #f9f8f869;
+    border: 1px solid #0a090955;
+    border-left: none;
     color: #024850fd;
     font-size: 27px;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    text-shadow: 2px 2px 5px rgb(15, 246, 215);
+    text-shadow: 1px 1px 1px rgb(15, 246, 242);
 }
 .indicator{
     position: absolute;
@@ -83,94 +87,114 @@ body{
 }
 
 .hour{
-    background-color: rgb(255, 0, 38);
+    background-color: rgb(0, 225, 255);
     /* transform: rotate(130deg); */
-    height: 70px;
+    height: 50px;
     width: 3px;
 }
 .minute{
-    background-color: rgb(245, 142, 7);
+    background-color: rgb(233, 7, 245);
     /* transform: rotate(270deg); */
-    height: 80px;
+    height: 60px;
     width: 2px;
 }
 .second{
-    /* background-color: rgb(71, 249, 98); */
-    background-color: #000;
-    height: 90px;
+    background-color: rgb(6, 113, 22);
+    /* background-color: #000; */
+    height: 70px;
     width: 1px;
 }
 
-
-.clock span:nth-child(1) b{
-    /* transform: rotate(-30deg); */
-}
-.clock span:nth-child(2) b{
-    /* transform: rotate(-60deg); */
-}
 .clock span:nth-child(3) b{
     transform: rotate(-90deg);
-    color: rgb(255, 0, 212);
-    font-size: 25px;
-}
-.clock span:nth-child(4) b{
-    /* transform: rotate(-120deg); */
-}
-.clock span:nth-child(5) b{
-    /* transform: rotate(-150deg); */
+    color: rgb(10, 6, 252);
+    font-size: 20px;
 }
 .clock span:nth-child(6) b{
     transform: rotate(-180deg);
-    color: rgb(255, 0, 212);
-    font-size: 25px;
-}
-.clock span:nth-child(7) b{
-    /* transform: rotate(150deg); */
-}
-.clock span:nth-child(8) b{
-    /* transform: rotate(120deg); */
+    color: rgb(10, 6, 252);
+    font-size: 20px;
 }
 .clock span:nth-child(9) b{
     transform: rotate(90deg);
-    color: rgb(255, 0, 212);
-    font-size: 25px;
+    color: rgb(10, 6, 252);
+    font-size: 20px;
 
-}
-.clock span:nth-child(10) b{
-    /* transform: rotate(60deg); */
-}
-.clock span:nth-child(11) b{
-    /* transform: rotate(30deg); */
 }
 .clock span:nth-child(12) b{
-    /* transform: rotate(30deg); */
-    color: rgb(255, 0, 212);
-    font-size: 25px;
+    color: rgb(10, 6, 252);
+    font-size: 20px;
 }
 
+@media only screen and (min-width: 320px) and (max-width: 480px){
+    
+body{
+    background: linear-gradient(to bottom, #f7f8f6,#0d0c0c);
+    background-color: #060606;
+}
+.clock{
+    height: 150px;
+    width: 150px;
+}
+.hour{
+    background-color: #fb0404;
+    height: 35px;
+    width: 2px;
+}
+.minute{
+    background-color: rgb(245, 186, 7);
+    /* transform: rotate(270deg); */
+    height: 42px;
+    width: 2px;
+}
+.second{
+    background-color: rgb(8, 8, 8);
+    /* background-color: #000; */
+    height:47px;
+    width: 1px;
+}
 
-.clock span:nth-child(1){    transform: rotate(30deg);
+.clock::after{
+    content: "";
+    height: 2px;
+    width: 2px;
+    border: 2px solid rgb(45, 45, 45);
+    position: relative;
+    background-color: #fcfafc;
+    border-radius: 50%;
+    z-index: 2;
 }
-.clock span:nth-child(2){    transform: rotate(60deg);
+.clock span b{
+    font-size: 12px;
+    font-weight: 900;
 }
-.clock span:nth-child(3){    transform: rotate(90deg);
+.clock span:nth-child(3) b{
+    color: rgb(219, 6, 252);
+    font-size: 16px;
+    font-weight: 600;
 }
-.clock span:nth-child(4){    transform: rotate(120deg);
+.clock span:nth-child(6) b{
+    color: rgb(219, 6, 252);
+    font-size: 16px;
+    font-weight: 600;
 }
-.clock span:nth-child(5){    transform: rotate(150deg);
+.clock span:nth-child(9) b{
+    color: rgb(219, 6, 252);
+    font-size: 16px;
+    font-weight: 600;
 }
-.clock span:nth-child(6){    transform: rotate(180deg);
+.clock span:nth-child(12) b{
+    color: rgb(219, 6, 252);
+    font-size: 16px;
+    font-weight: 600;
 }
-.clock span:nth-child(7){    transform: rotate(210deg);
+.am-pm{
+    top: 38%;
+    left: 99%;
+    height: 30px;
+    width: 60px;
+    color: #024850fd;
+    font-size: 20px;
+    text-shadow: 1px 1px 1px rgb(15, 235, 246);
 }
-.clock span:nth-child(8){    transform: rotate(240deg);
 }
-.clock span:nth-child(9){    transform: rotate(270deg);
-}
-.clock span:nth-child(10){    transform: rotate(300deg);
-}
-.clock span:nth-child(11){    transform: rotate(330deg);
-}
-.clock span:nth-child(12){    transform: rotate(0deg);
-}
-
